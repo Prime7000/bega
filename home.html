@@ -62,8 +62,8 @@ Diagnostics Ltd <br><a href="about.html"><button class="default_button"> About U
     <div class="body1" style="height: initial;">
         <div class="grid" style="justify-content: center; height: initial;">
             <div class="grid_div"><img src="images/national-cancer-institute-egT3xtDu9DQ-unsplash.jpg"><label>We deliver Precise Results </label></div>
-            <div class="grid_div"><img src="images/logan-moreno-gutierrez-fN6K30xtiKE-unsplash.jpg"><label>We make use of ADVANCED TECHNOLOGY</label></div>
-            <div class="grid_div"><img src="images/national-cancer-institute-GcrSgHDrniY-unsplash.jpg"><label>We have PROFESSIONAL STAFFs</label></div>
+            <div class="grid_div"><img src="images/logan-moreno-gutierrez-fN6K30xtiKE-unsplash.jpg"><label>We make use of advanced technology</label></div>
+            <div class="grid_div"><img src="images/national-cancer-institute-GcrSgHDrniY-unsplash.jpg"><label>We have professional staffs</label></div>
         </div>
     </div>
    </div>
@@ -80,7 +80,7 @@ Diagnostics Ltd <br><a href="about.html"><button class="default_button"> About U
                 <h1>
                     Trusted by over <label class="people_count">0</label> people
                 </h1>
-                 <button class="default_button">Learn more</button>
+                 <a href="about.html"><button class="default_button">Learn more</button></a>
             </div>
         </div> 
         <br><br>
@@ -160,13 +160,30 @@ Diagnostics Ltd <br><a href="about.html"><button class="default_button"> About U
                 </div>
                 <div class="box1" style="width: initial; word-wrap: break-word;p">
                     <div class="submit_form" style="width: 300px;height: 100%; border-left: solid 2px #007bff; padding-left: 20px">
-                        <form>
-                            <input type="text" name="fullname" placeholder="Your Name">
+                        <form class="mail_form" method="get">
+                            <p class="error_noti">...</p>
+                            <input id="my_mail_text" type="text" name="fullname" placeholder="Your Name">
                             <br>
-                            <input type="text" name="email" placeholder="Your Email">
-                            <br><br>
-                            <input class="default_button" type="button" name="submit" value="Subscribe">
+                            <br>
+                            
                         </form>
+                        <a class="message_mail"><input onclick="send_mail()" class="default_button" type="submit" name="submit" value="Send a mail"></a>
+                        <script>
+                            var my_mail_text=document.querySelector("#my_mail_text");
+                            var error_noti = document.querySelector(".error_noti");
+                            var mail_form = document.querySelector(".mail_form");
+                            var message_mail = document.querySelector(".message_mail");
+                            function send_mail(){
+                                if(my_mail_text.value == ""){
+                                    error_noti.innerText="Please Input your Name";
+                                    message_mail.href="#";
+                                }
+                                else{
+                                    message_mail.href = "mailto:Adams@begadianosticltd.com?subject=Hello, my name is "+my_mail_text.value+"&body=Your message Here...";
+                                    
+                                }
+                            }
+                        </script>
                     </div>
                 </div>
                 
